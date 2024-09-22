@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kantinen Dienst Planer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kantinen Dienst Planer</h1>
+        
+        <div class="person-form">
+            <h2>Person hinzufügen</h2>
+            <input type="text" id="personName" placeholder="Name der Person">
+            <button onclick="addPerson()">Person hinzufügen</button>
+        </div>
+        <div id="frequencyResult"></div>
+        
+        <div class="person-list">
+            <h2>Personenliste und Fehltage</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Fehltage (im Format tt.mm)</th>
+                    </tr>
+                </thead>
+                <tbody id="personTableBody"></tbody>
+            </table>
+        </div>
+        
+        <div class="workplan">
+            <h2>Kantinendienst für das restliche Jahr berechnen</h2>
+            <button onclick="calcWorkDays()">Jahres-Dienstplan berechnen</button>
+            <button onclick="exportToExcel()">Exportiere Plan als Excel</button>
+            <p id="workplanResult"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</body>
+</html>
